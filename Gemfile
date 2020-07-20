@@ -8,8 +8,6 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.3', '<1.4'
 # gem 'sqlite3',git:"https://github.com/larskanis/sqlite3-ruby",branch:"add-gemspec"
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
@@ -30,16 +28,23 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+# Bootstrap
+gem 'bootstrap', '~> 4.1', '~> 4.1.3'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'jquery-rails'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'sqlite3', '~> 1.3', '<1.4'
+end
+
+group :production do
+	gem 'pg', '~> 1.0'
+	gem 'rails_12factor'
 end
 
 group :development do
